@@ -1,0 +1,161 @@
+<!-- 
+  Documento HTML5 para la página web de Pokémon
+  Esta página presenta información sobre el mundo Pokémon y permite a los usuarios
+  compartir sus experiencias como entrenadores
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos básicos para configuración de la página -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon</title>
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Encabezado principal de la página -->
+    <header>
+      <h1>Pokémon: ¡Hazte con todos!</h1>
+    </header>
+
+    <!-- 
+      Sección principal con imagen destacada
+      Muestra una vista general del mundo Pokémon con texto superpuesto 
+    -->
+    <section id="tablero">
+      <h2>El Mundo Pokémon</h2>
+      <div class="tablero-container">
+        <img
+          src="images/pokemon-world.png"
+          alt="Mundo Pokémon"
+          class="tablero-img"
+        />
+        <div class="tablero-overlay">
+          <p>Un mundo lleno de aventuras y amistades</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+      Sección de introducción
+      Proporciona información general sobre la franquicia Pokémon y su impacto cultural
+    -->
+    <section id="introduccion">
+      <h2>Introducción a Pokémon</h2>
+      <div class="card">
+        <p>
+          Pokémon es una franquicia que ha cautivado a millones de personas en
+          todo el mundo desde su creación en 1996. En este universo, los
+          entrenadores Pokémon viajan por diferentes regiones, capturando,
+          entrenando y formando vínculos con criaturas llamadas Pokémon.
+        </p>
+        <p>
+          Más que un simple juego, Pokémon se ha convertido en un fenómeno
+          cultural que abarca videojuegos, series de televisión, películas,
+          juegos de cartas y mucho más. La franquicia promueve valores como la
+          amistad, la perseverancia y el respeto por la naturaleza.
+        </p>
+      </div>
+    </section>
+
+    <!-- 
+      Sección del carrusel de imágenes
+      Muestra un carrusel interactivo con imágenes de Pokémon icónicos
+      Las flechas permiten navegación manual y hay autoplay cada 5 segundos
+    -->
+    <section id="banner">
+      <div class="carousel">
+        <button class="carousel-btn prev">⟨</button>
+        <div class="carousel-track">
+          <img src="images/pikachu.png" alt="Pikachu" />
+          <img src="images/charizard.png" alt="Charizard" />
+          <img src="images/bulbasaur.png" alt="Bulbasaur" />
+          <img src="images/squirtle.png" alt="Squirtle" />
+          <img src="images/mewtwo.png" alt="Mewtwo" />
+          <img src="images/snorlax.png" alt="Snorlax" />
+        </div>
+        <button class="carousel-btn next">⟩</button>
+      </div>
+    </section>
+
+    <!-- 
+      Sección de beneficios y valores
+      Explica por qué Pokémon es más que un simple juego y sus valores fundamentales
+    -->
+    <section id="beneficios">
+      <h2>¿Por qué amar Pokémon?</h2>
+      <div class="card">
+        <p>
+          Pokémon no es solo un juego, es una experiencia que fomenta el
+          pensamiento estratégico y la planificación. Cada batalla requiere
+          conocer las fortalezas y debilidades de los diferentes tipos de
+          Pokémon, creando estrategias únicas para cada situación.
+        </p>
+        <p>
+          La franquicia promueve valores importantes como el trabajo en equipo,
+          la perseverancia y el cuidado de los seres vivos. Los entrenadores
+          aprenden que el vínculo con sus Pokémon es tan importante como la
+          fuerza en batalla.
+        </p>
+        <p>
+          Además, la comunidad Pokémon es una de las más grandes y acogedoras
+          del mundo, donde los fans pueden compartir experiencias, intercambiar
+          Pokémon y participar en emocionantes torneos y eventos.
+        </p>
+      </div>
+    </section>
+
+    <!-- 
+      Sección del formulario interactivo
+      Permite a los usuarios compartir sus experiencias como entrenadores Pokémon
+      Los campos incluyen nombre, puntuación y una descripción de su aventura
+    -->
+    <section id="formulario">
+      <h2>¡Comparte tu experiencia Pokémon!</h2>
+      <div class="card">
+        <form id="opinionForm">
+          <!-- Campo para el nombre del entrenador -->
+          <label for="nombre">Nombre de Entrenador:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <!-- Campo para la puntuación con límites de 1 a 5 -->
+          <label for="calificacion">Puntuación Pokédex (1 a 5):</label>
+          <input
+            type="number"
+            id="calificacion"
+            name="calificacion"
+            min="1"
+            max="5"
+            required
+          />
+
+          <!-- Campo para la descripción de la experiencia -->
+          <label for="opinion">Tu aventura Pokémon:</label>
+          <textarea id="opinion" name="opinion" required></textarea>
+
+          <button type="submit">¡Enviar!</button>
+        </form>
+        <!-- Contenedor para mensajes de éxito o error -->
+        <div id="mensaje"></div>
+      </div>
+    </section>
+
+    <!-- 
+      Sección de comentarios
+      Muestra las historias compartidas por otros entrenadores
+      Incluye un botón para mostrar/ocultar los comentarios
+    -->
+    <section id="comentarios">
+      <h2>Historias de Entrenadores</h2>
+      <div class="card">
+        <button id="verComentariosBtn">Ver historias</button>
+        <!-- Lista donde se cargarán dinámicamente los comentarios -->
+        <ul id="listaComentarios"></ul>
+      </div>
+    </section>
+
+    <!-- Enlace al archivo JavaScript que maneja la interactividad -->
+    <script src="script.js"></script>
+  </body>
+</html>
