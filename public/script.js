@@ -37,7 +37,7 @@ opinionForm.addEventListener("submit", async (e) => {
 
   try {
     // Envía la opinión al servidor
-    const response = await fetch(`${API_BASE_URL}/api/feedback`, {
+    const response = await fetch(`${API_BASE_URL}/feedback`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
